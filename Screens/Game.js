@@ -33,7 +33,7 @@ const Game = (props) => {
       ]);
       return;
     }
-    if (direction = 'lower') {
+    if (direction === 'lower') {
       currentHigh.current = currentGuess;
     } else {
       currentLow.current = currentGuess;
