@@ -4,9 +4,9 @@ import { View, Text, StyleSheet, TextInput, Button } from 'react-native';
 const StartGame = props => {
   return (
     <View style={styles.screen}>
-      <Text>Start a New Game!</Text>
+      <Text style={styles.title}>Start a New Game!</Text>
       <View style={styles.inputContainer}>
-        <Text style={styles.title}>Select a Number!</Text>
+        <Text >Select a Number!</Text>
         <TextInput/>
         <View style={styles.buttonContainer}>
           <Button title="Reset" />
