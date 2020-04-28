@@ -33,12 +33,16 @@ const Game = (props) => {
       ]);
       return;
     }
-    if (direction === 'lower') {
+    if (direction === "lower") {
       currentHigh.current = currentGuess;
     } else {
       currentLow.current = currentGuess;
     }
-    const nextNumber = generateRandomBetween(currentLow.current, currentHigh.current, currentGuess);
+    const nextNumber = generateRandomBetween(
+      currentLow.current,
+      currentHigh.current,
+      currentGuess
+    );
     setCurrentGuess(nextNumber);
   };
 
@@ -47,8 +51,11 @@ const Game = (props) => {
       <Text>Opponent's Guess</Text>
       <NumberContainer>{currentGuess}</NumberContainer>
       <Card style={styles.buttonContainer}>
-        <Button title="LOWER" onPress={nextGuessHandler.bind(this, 'lower')} />
-        <Button title="GREATER" onPress={nextGuessHandler.bind(this, 'greater')} />
+        <Button title="LOWER" onPress={nextGuessHandler.bind(this, "lower")} />
+        <Button
+          title="GREATER"
+          onPress={nextGuessHandler.bind(this, "greater")}
+        />
       </Card>
     </View>
   );
