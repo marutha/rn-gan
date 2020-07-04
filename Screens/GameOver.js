@@ -1,11 +1,12 @@
 import React from "react";
-import { View, Text, StyleSheet, Button, Image } from "react-native";
+import { View, Text, StyleSheet, Button, Image, Dimensions, ScrollView } from "react-native";
 import Game from "./Game";
 import BodyText from "../Components/BodyText";
 import TitleText from "../Components/TitleText";
 
 const GameOver = (props) => {
   return (
+    <ScrollView>
     <View style={styles.screen}>
       <TitleText>Game Over !</TitleText>
       <View style={styles.imageContainer}>
@@ -19,6 +20,7 @@ const GameOver = (props) => {
       <BodyText>User Number: {props.number}</BodyText>
       <Button title="Start Over" onPress={props.onRestart} />
     </View>
+    </ScrollView>
   );
 };
 
@@ -29,13 +31,13 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   imageContainer: {
-    width: 300,
-    height: 300,
-    borderRadius: 150,
+    width: Dimensions.get('window').width * .7,
+    height: Dimensions.get('window').width * .7,
+    borderRadius: Dimensions.get('window').width * .7 /2,
     borderWidth: 3,
     borderColor: 'black',
     overflow: 'hidden',
-    marginVertical: 20,
+    marginVertical: Dimensions.get('window').height / 20,
   },
   image: {
     width: "100%",
